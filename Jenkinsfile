@@ -1,29 +1,10 @@
 pipeline {
-    agent any
-
+    agent { label 'master' }
     stages {
-        stage('Compile Stage') {
+        stage('build') {
             steps {
-               {
-                sh 'mvn clean compile'
+                echo "Hello World!"
             }
-        }
-        }
-        stage('Testing Stage') {
-            steps {
-               
-                {
-                sh 'mvn test'
-            }
-        }
-        }
-        stage('Deployment Stage') {
-            steps {
-                
-                {
-                sh 'mvn deploy'
-            }
-        }
         }
     }
 }
