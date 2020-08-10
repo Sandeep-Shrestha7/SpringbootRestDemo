@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    
     stages {
         stage('Build') {
             steps {
@@ -14,9 +14,15 @@ pipeline {
                 bat "mvn test"
             }
         }
+        
+        stage('artifact') {
+         archive 'target/*.jar'   
+        }
+        
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                 
             }
         }
     }
