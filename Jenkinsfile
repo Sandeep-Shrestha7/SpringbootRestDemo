@@ -1,9 +1,20 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage('Clone') { 
+        stage('Build') {
             steps {
-                sh 'https://github.com/Sandeep-Shrestha7/SpringbootRestDemo.git'
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
