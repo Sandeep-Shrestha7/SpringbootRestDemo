@@ -15,10 +15,6 @@ pipeline {
             }
         }
         
-        stage('artifact') {
-         archive 'target/*.jar'   
-        }
-        
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
