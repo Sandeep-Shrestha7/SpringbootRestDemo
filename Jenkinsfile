@@ -8,19 +8,6 @@ pipeline {
                 bat "mvn clean install"
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                bat "mvn test"
-            }
-        }
-        
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-                 
-            }
-        }
         
     stage("Upload to AWS") {
       steps {
