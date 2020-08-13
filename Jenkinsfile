@@ -12,7 +12,7 @@ pipeline {
     stage("Upload to AWS") {
       steps {
          
-        withAWS(region:'us-east-1') {
+        withAWS(region:'us-east-1', credentials: 'aws-credentials') {
             s3Upload(file:'target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar', bucket:'sandeep-jenkins', path:'path/to/target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar')
            
          
