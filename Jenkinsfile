@@ -11,9 +11,10 @@ pipeline {
         
     stage("Upload to AWS") {
       steps {
-          echo %WORKSPACE%
+         
         withAWS(region:'us-east-1') {
-            s3Upload(file: 'SpringBootRestDemo-0.0.1-SNAPSHOT.jar', bucket:'sandeep-jenkins', path:'/path/to/targetFolder/')
+            s3Upload(file:'SpringBootRestDemo-0.0.1-SNAPSHOT.jar', bucket:'sandeep-jenkins', path:'path/to/target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar')
+           
          
         }
       }
