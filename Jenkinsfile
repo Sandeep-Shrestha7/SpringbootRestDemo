@@ -12,7 +12,7 @@ pipeline {
     stage("Upload to AWS") {
       steps {
          
-        withAWS(region:'us-east-1', role:'role-name', roleAccount:'roleAccount', externalId: 'roleExternalId', duration: 900, roleSessionName: 'jenkins-session') {
+        withAWS(region:'us-east-1', profile: 'S3group') {
             s3Upload(file:'target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar', bucket:'sandeep-jenkins', path:'path/to/target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar')
            
          
