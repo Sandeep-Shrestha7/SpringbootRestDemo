@@ -13,7 +13,7 @@ pipeline {
       steps {
          
         withAWS(region:'us-east-2', credentials: '1234567') {
-            s3Upload(file:'target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar', bucket:'sandeep-jenkins', path:'path/to/target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar')
+            s3Upload(file:'target/SpringBootRestDemo-0.0.1-SNAPSHOT.jar', bucket:'sandeep-jenkins', path:'/SpringBootRestDemo-0.0.1-SNAPSHOT.jar')
            
          
         }
